@@ -7,16 +7,19 @@ import ComponentServiceCustomers from './components/ComponentServiceCostumers';
 import ComponentServiceSuppliers from './components/ComponentServiceSuppliers';
 import EmpleadosDepartamentos from './components/EmpleadosDepartamentos';
 import EmpleadosOficios from './components/EmpleadosOficios';
+import DepartamentosComponent from './components/maestrodetalle/DepartamentosComponent';
+import CocheComponent from './components/maestrodetalle/CocheComponent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {
-    /*<ComponentServiceCustomers />
+    {/*<ComponentServiceCustomers />
     <ComponentServiceSuppliers />
-    <EmpleadosDepartamentos/>*/
-    }
     <EmpleadosOficios />
+    <EmpleadosDepartamentos />
+    <DepartamentosComponent />
+    */}
+    <CocheComponent />  
   </React.StrictMode>
 );
 

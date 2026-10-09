@@ -24,8 +24,12 @@ export default class EmpleadosDepartamentos extends Component {
         let request = "webresources/departamentos"
         axios.get(this.urlDepartamentos + request).then((response) => {
             console.log("Leyendo departamentos")
+            let aux = new Set([])
+            for (let elem of response.data) {
+                aux.add(elem)
+            }
             this.setState({
-                departamentos: response.data
+                departamentos: Array.from(aux)
             }) 
         })
     }
