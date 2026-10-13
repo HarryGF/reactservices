@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './MenuComponent.css'
+import { NavLink } from 'react-router-dom'
 
 export default class MenuComponent extends Component {
 
@@ -9,22 +10,24 @@ export default class MenuComponent extends Component {
             <div id='menu'>
                 <ul>
                     <li>
-                        <a href="/">Home</a>
+                        <NavLink to="/">Home</NavLink>
                     </li>
                     {
                         this.numeros.map((numero,index) => {
                             let ruta = "/tabla/" + numero
                             return(<li>
-                                <a href={ruta}>Tabla multiplicar {numero}</a>
+                                <NavLink to={ruta}>
+                                    Tabla multiplicar {numero}
+                                </NavLink>
                             </li>
                             )
                         })
                     }
                     <li>
-                        <a href="/collatz/356">Conjetura Collatz 356</a>
+                        <NavLink to="/collatz/356">Conjetura Collatz 356</NavLink>
                     </li>
                     <li>
-                        <a href="/collatz/3">Conjetura Collatz 3</a>
+                        <NavLink to="/collatz/3">Conjetura Collatz 3</NavLink>
                     </li>
                 </ul>
             </div>

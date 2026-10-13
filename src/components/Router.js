@@ -5,6 +5,7 @@ import HomeComponent from './HomeComponent'
 import TablaMultiplicar from './TablaMultiplicarComponent'
 import NotFoundComponent from './NotFoundComponent'
 import ConjeturaCollatz from './ConjeturaCollatz'
+import MenuComponent from './MenuComponent'
 
 export default class Router extends Component {
     render() {
@@ -21,6 +22,7 @@ export default class Router extends Component {
 
         return (
             <BrowserRouter>
+                <MenuComponent/>
                 <Routes>
                     <Route path='/' element={<HomeComponent/>}/>
                     <Route path='/tabla/:numero' element={<TablaMlultiplicarElement/>}/>

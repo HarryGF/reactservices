@@ -26,6 +26,13 @@ export default class ConjeturaCollatz extends Component {
         this.generarNumerosCollatz()
     }
 
+    componentDidUpdate = (oldProps) => {
+        if(oldProps.numero != this.props.numero) {
+            this.generarNumerosCollatz()
+        } 
+    } 
+
+
     render() {
         return (
             <div>
@@ -33,10 +40,12 @@ export default class ConjeturaCollatz extends Component {
                 <h3>
                     Número: {this.props.numero}
                 </h3>
-                <ul>
+                <ul className='list-group'>
                     {
                         this.state.numeros.map((num, index) => {
-                            return (<li key={index}>{num}</li>)
+                            return (<li className='list-group-item' key={index}>
+                                {num}
+                                </li>)
                         })
                     }
                 </ul>

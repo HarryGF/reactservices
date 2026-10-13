@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import $ from 'jquery';
+import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle';
 
 export default class TablaMultiplicar extends Component {
 
@@ -22,6 +25,12 @@ export default class TablaMultiplicar extends Component {
         this.generarTablaMultiplicar()
     }
     
+    componentDidUpdate = (oldProps) => {
+        if(oldProps.numero != this.props.numero) {
+            this.generarTablaMultiplicar()
+        } 
+    } 
+
     render() {
         return (
             <div>
@@ -29,10 +38,12 @@ export default class TablaMultiplicar extends Component {
                 <h3>
                     Número: {this.props.numero}
                 </h3>
-                <ul>
+                <ul className='list-group'>
                     {
                         this.state.tabla.map((num, index) => {
-                            return (<li key={index}>{num}</li>)
+                            return (<li className='list-group-item' key={index}>
+                                {num}
+                                </li>)
                         })
                     }
                 </ul>

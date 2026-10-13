@@ -11,6 +11,9 @@ import DepartamentosComponent from './components/maestrodetalle/DepartamentosCom
 import CocheComponent from './components/maestrodetalle/CocheComponent';
 import MenuComponent from './components/MenuComponent';
 import Router from './components/Router';
+import $ from 'jquery';
+import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,8 +26,6 @@ root.render(
     <DepartamentosComponent />
     <CocheComponent />  
     */}
-
-    <MenuComponent/>
     <Router/>
   </div>
 );
